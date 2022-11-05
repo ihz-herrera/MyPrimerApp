@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Reservaciones.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,23 +13,41 @@ namespace Reservaciones
 {
     public partial class frmPacientes : Form
     {
+        
+        List<Persona> Personas = new List<Persona>();
+
         public frmPacientes()
         {
             InitializeComponent();
+
         }
+
+
+
+
+
+
+
+
 
         private void frmPacientes_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
+            Persona persona = new Persona();
 
-        }
+            persona.Nombre = txtNombre.Text;
+            persona.Altura = double.Parse(txtAltura.Text);
+            persona.Peso = double.Parse(txtPeso.Text);
+            persona.FechaNacimiento = dtpFechaNacimiento.Value;
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+            Personas.Add(persona);
+
+            dtgPacientes.DataSource = null;
+            dtgPacientes.DataSource = Personas;
 
         }
     }

@@ -30,13 +30,15 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPeso = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtAltura = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.dtgPacientes = new System.Windows.Forms.DataGridView();
+            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgPacientes)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -47,7 +49,6 @@
             this.label1.Size = new System.Drawing.Size(51, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtNombre
             // 
@@ -55,14 +56,6 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(183, 23);
             this.txtNombre.TabIndex = 1;
-            this.txtNombre.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(12, 92);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(183, 23);
-            this.textBox2.TabIndex = 3;
             // 
             // label2
             // 
@@ -113,24 +106,43 @@
             this.btnAceptar.TabIndex = 8;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // dtgPacientes
+            // 
+            this.dtgPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgPacientes.Location = new System.Drawing.Point(254, 43);
+            this.dtgPacientes.Name = "dtgPacientes";
+            this.dtgPacientes.RowTemplate.Height = 25;
+            this.dtgPacientes.Size = new System.Drawing.Size(505, 217);
+            this.dtgPacientes.TabIndex = 9;
+            // 
+            // dtpFechaNacimiento
+            // 
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(13, 100);
+            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(182, 23);
+            this.dtpFechaNacimiento.TabIndex = 10;
             // 
             // frmPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(776, 283);
+            this.Controls.Add(this.dtpFechaNacimiento);
+            this.Controls.Add(this.dtgPacientes);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtAltura);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
             this.Name = "frmPacientes";
             this.Text = "Pacientes";
             this.Load += new System.EventHandler(this.frmPacientes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgPacientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,12 +152,13 @@
 
         private Label label1;
         private TextBox txtNombre;
-        private TextBox textBox2;
         private Label label2;
         private TextBox txtPeso;
         private Label label3;
         private TextBox txtAltura;
         private Label label4;
         private Button btnAceptar;
+        private DataGridView dtgPacientes;
+        private DateTimePicker dtpFechaNacimiento;
     }
 }
