@@ -15,7 +15,6 @@ namespace Reservaciones
     {
         
         List<Paciente> Personas = new List<Paciente>();
-        private const string path = @"D:\BasesDeDatos\Pacientes.csv";
 
         public frmPacientes()
         {
@@ -26,36 +25,10 @@ namespace Reservaciones
         private void frmPacientes_Load(object sender, EventArgs e)
         {
 
+            Paciente paciente = new Paciente();
 
-            using (var reader = new System.IO.StreamReader(path))
-            {
-                var line = reader.ReadLine();
-
-                while (line != null)
-                {
-                    string[] data = line.Split(',');
-                    var paciente = new Paciente()
-                    {
-                        Nombre = data[0],
-                        Altura = Double.Parse(data[1]),
-                        Peso = Double.Parse(data[2]),
-                        FechaNacimiento = DateTime.Parse(data[3])
-                    };
-
-                    MessageBox.Show(paciente.ToString());
-
-                    Personas.Add(paciente);
-                    line = reader.ReadLine();
-
-                }
-
-                reader.Close();
-
-            }
-
-
-
-
+            Personas = paciente.LeerPacientes();
+            
             dtgPacientes.DataSource = null;
             dtgPacientes.DataSource = Personas;
         }
@@ -72,36 +45,14 @@ namespace Reservaciones
             Personas.Add(paciente);
 
             //Todo:Almacenar Informacion 
-            using (var writer = new System.IO.StreamWriter(path, true))
-            {
-                writer.WriteLine(paciente.ToString());
-                writer.AutoFlush = true;
-                writer.Close();
-            }
+            paciente.Agregar(paciente);
                 
-            
-            
             dtgPacientes.DataSource = null;
             dtgPacientes.DataSource = Personas;
 
         }
 
-        private void GuardarTodosLosPacientes(List<Paciente> pacientes)
-        {
-            using (var writer = new System.IO.StreamWriter(path))
-            {
-                foreach (Paciente paciente in pacientes)
-                {
-                    //Todo:Almacenar Informacion 
-
-                    writer.WriteLine(paciente.ToString());
-                    writer.AutoFlush = true;
-                    writer.Close();
-
-                }
-            }
-
-        }
+        
 
         [Obsolete("Usar método ToString() en su lugar",true)]
         private string ConfigurarRegistro(Paciente paciente)
