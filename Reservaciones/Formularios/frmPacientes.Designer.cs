@@ -111,10 +111,10 @@
             // dtgPacientes
             // 
             this.dtgPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgPacientes.Location = new System.Drawing.Point(254, 43);
+            this.dtgPacientes.Location = new System.Drawing.Point(224, 40);
             this.dtgPacientes.Name = "dtgPacientes";
             this.dtgPacientes.RowTemplate.Height = 25;
-            this.dtgPacientes.Size = new System.Drawing.Size(505, 217);
+            this.dtgPacientes.Size = new System.Drawing.Size(535, 220);
             this.dtgPacientes.TabIndex = 9;
             // 
             // dtpFechaNacimiento

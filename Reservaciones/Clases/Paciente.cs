@@ -6,12 +6,20 @@ using System.Threading.Tasks;
 
 namespace Reservaciones.Clases
 {
-    public class Persona
+    public class Paciente
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
         public double Peso { get; set; }
         public double Altura { get; set; }
         public DateTime FechaNacimiento { get; set; }
+
+
+
+        public override string ToString()
+        {
+            return $"{Nombre},{Altura}, {Peso},{FechaNacimiento}";
+        }
+
     }
 }
